@@ -25,9 +25,9 @@ public class PatronSingleton {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(AZUL + "╔══════════════════════════════════════╗");
-        System.out.println("║     🏪 Bienvenido al sistema de Papelería     ║");
-        System.out.println("╚══════════════════════════════════════╝" + RESET);
+        System.out.println(AZUL + "══════════════════════════════════════");
+        System.out.println(" Bienvenido al sistema de Papelería     ");
+        System.out.println("══════════════════════════════════════" + RESET);
 
         System.out.print("Ingrese su nombre de empleado: ");
         String nombreEmpleado = sc.nextLine();
@@ -51,7 +51,7 @@ public class PatronSingleton {
             System.out.println("3. Salir");
             System.out.print("Seleccione una opción: ");
 
-            int opcion = leerEntero(sc, AMARILLO + "⚠️ Debe ingresar un número válido (1-3): " + RESET);
+            int opcion = leerEntero(sc, AMARILLO + " Debe ingresar un número válido (1-3): " + RESET);
 
             switch (opcion) {
                 case 1:
@@ -77,7 +77,7 @@ public class PatronSingleton {
                     System.out.println(CYAN + "👋 Cerrando sesión de " + nombreEmpleado + "..." + RESET);
                     break;
                 default:
-                    System.out.println(AMARILLO + "⚠️ Opción no válida. Intente nuevamente." + RESET);
+                    System.out.println(AMARILLO + "Opción no válida. Intente nuevamente." + RESET);
             }
         }
         sc.close();
@@ -124,7 +124,7 @@ class InventarioPapeleria {
 
     private InventarioPapeleria() {
         productos = new HashMap<>();
-        System.out.println("📦 Inventario de papelería creado.");
+        System.out.println("Inventario de papelería creado.");
     }
 
     public static InventarioPapeleria getInstancia() {
@@ -152,7 +152,7 @@ class InventarioPapeleria {
             return false;
         }
         productos.put(clave, stockActual - cantidad);
-        System.out.println(PatronSingleton.VERDE + "💰 Venta realizada: " + cantidad + " unidades de " + nombre + PatronSingleton.RESET);
+        System.out.println(PatronSingleton.VERDE + "Venta realizada: " + cantidad + " unidades de " + nombre + PatronSingleton.RESET);
         return true;
     }
 
